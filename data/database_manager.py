@@ -7,12 +7,11 @@ def create_connection(db_file):
     conn = None
     try:
         conn = sqlite3.connect(db_file)  # To-Do add a connection for the database
-        return conn 
     except Error as e:
         print(e)
 
     #To-Do return the connection 
-    return e
+    return conn
 
 def close_connection(conn):
     """ closes a connection to a database """
@@ -37,6 +36,7 @@ def print_rows(rows):
     for row in rows:
         print(row)
 
+# for local testing
 if __name__ == '__main__':
     connection = create_connection("longley.db")
     print(connection)
